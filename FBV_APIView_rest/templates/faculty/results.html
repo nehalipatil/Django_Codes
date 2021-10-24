@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Faculty Information
+</h1>
+{% if faculty %}
+        <table border=2>
+            <thead>
+            <th>Faculty Number</th>
+            <th>Faculty Name</th>
+            <th>Faculty Salary</th>
+            <th>Faculty Address</th>
+            </thead>
+        {% for fal in faculty %}
+            <tr>
+                <td>{{fal.fno}}</td>
+                <td>{{fal.f_name}}</td>
+                <td>{{fal.f_sal}}</td>
+                <td>{{fal.f_city}}</td>
+
+            </tr>
+            {% endfor %}
+        </table>
+{%else%}
+<p> No Faculty Record found</p>
+{%endif%}
+</body>
+</html>
